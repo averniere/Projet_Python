@@ -63,5 +63,3 @@ def df_filter(df, wanted_variables):
     Returns: the dataframe with only the variables needed
     '''
     return df[wanted_variables]
-
-print('ok')
