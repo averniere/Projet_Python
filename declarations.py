@@ -1,6 +1,6 @@
-# Import des librairies 
+# Import des librairies
 import bs4
-import lxml
+#import lxml
 import pandas as pd
 import urllib
 from urllib import request
@@ -16,6 +16,7 @@ consumption_data_url_2021="https://enedis.opendatasoft.com/api/explore/v2.1/cata
 class Meteo :
     def __init__(self):
         self.data_all = {i : {j : {} for j in range(1,13)} for i in range(2011,2019)}
+
     def scrap(self):
         for y in self.data_all :
             for m in self.data_all[y] :
@@ -52,3 +53,15 @@ class Meteo :
                'Cumul de précipitation du mois' : 'rr',
                "Heure d'ensolleiment du mois" : 'ens',
                'Rafale maximale du mois' : 'rafale'}, axis=1, inplace = True)
+            
+
+def df_filter(df, wanted_variables):
+    ''' Returns a dataframe with the only variables we need for the study.
+    Args: 
+        df (DataFrame)
+        wanted_variables (list)
+    Returns: the dataframe with only the variables needed
+    '''
+    return df[wanted_variables]
+
+print('ok')
