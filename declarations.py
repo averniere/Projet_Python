@@ -3,6 +3,7 @@ import bs4
 #import lxml
 import pandas as pd
 import urllib
+import cartiflette.s3 as s3
 from urllib import request
 
 
@@ -12,6 +13,18 @@ consumption_data_url_2018="https://enedis.opendatasoft.com/api/explore/v2.1/cata
 consumption_data_url_2019="https://enedis.opendatasoft.com/api/explore/v2.1/catalog/datasets/consommation-annuelle-residentielle-par-adresse/exports/csv?lang=fr&refine=annee%3A%222019%22&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B"
 consumption_data_url_2020="https://enedis.opendatasoft.com/api/explore/v2.1/catalog/datasets/consommation-annuelle-residentielle-par-adresse/exports/csv?lang=fr&refine=annee%3A%222020%22&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B"
 consumption_data_url_2021="https://enedis.opendatasoft.com/api/explore/v2.1/catalog/datasets/consommation-annuelle-residentielle-par-adresse/exports/csv?lang=fr&refine=annee%3A%222021%22&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B"
+
+# Fonds de cartes
+# Fond de carte des départements français 
+dep = s3.download_vectorfile_url_all(
+    values = "metropole",
+    crs = 4326,
+    borders = "DEPARTEMENT",
+    vectorfile_format="topojson",
+    filter_by="FRANCE_ENTIERE",
+    source="EXPRESS-COG-CARTO-TERRITOIRE",
+    year=2022)
+dep.drop(['id','ID','NOM_M','source','INSEE_REG','territoire'], axis=1)
 
 class Meteo :
     def __init__(self):
