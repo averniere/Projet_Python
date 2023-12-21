@@ -9,7 +9,7 @@ import geopandas as gpd
 import geoviews as gv
 
 
-jerome=42
+essai=42
 
 # URL utiles 
 url_soleil="https://static.data.gouv.fr/resources/donnees-du-temps-densoleillement-par-departements-en-france/20221207-142648/temps-densoleillement-par-an-par-departement-feuille-1.csv"
