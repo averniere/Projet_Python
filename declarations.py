@@ -5,6 +5,9 @@ import pandas as pd
 import urllib
 import cartiflette.s3 as s3
 from urllib import request
+import os
+from os.path import isfile
+import requests
 
 
 ### URL utiles ###
@@ -144,3 +147,15 @@ dep = s3.download_vectorfile_url_all(
     year=2022) # Fond de carte des départements français 
 
 var_dep=['INSEE_DEP', 'geometry'] # On ne garde que les variables codant le code du département et la variable geometry
+
+def save_map(m, choropleth, year, format, replace:bool=False):
+    '''Enregistre une carte dans le dossier cartes du repository.
+    Entrées:
+            m (): fond de carte
+            choropleth(): attributs de la carte choroplèthe à supperposer au fond de carte
+            year (string): 
+    '''
+    path_to_map="cartes\carte_temp"+f"{year}"+"."+f"{format}"
+    if not (isfile (path_to_map) and not replace):
+        choropleth.add_to(m)
+        m.save(path_to_map)
