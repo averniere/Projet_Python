@@ -10,7 +10,7 @@ import geoviews as gv
 
 ### URL utiles ###
 # Données météo par communes et département
-url_soleil="https://static.data.gouv.fr/resources/donnees-du-temps-densoleillement-par-departements-en-france/20221207-142648/temp"
+url_soleil="https://static.data.gouv.fr/resources/donnees-du-temps-densoleillement-par-departements-en-france/20221207-142648/temps-densoleillement-par-an-par-departement-feuille-1.csv"
 
 api_root_temp="https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/temperature-quotidienne-departementale/records"
 api_req_tmoy="?select=avg(tmoy)&group_by=code_insee_departement"
