@@ -9,15 +9,14 @@ import os
 from os.path import isfile
 import requests
 
-
 ### URL utiles ###
 # Données météo par communes et département
 url_soleil="https://static.data.gouv.fr/resources/donnees-du-temps-densoleillement-par-departements-en-france/20221207-142648/temps-densoleillement-par-an-par-departement-feuille-1.csv"
 
 api_root_temp="https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/temperature-quotidienne-departementale/records"
-api_req_tmoy="?select=avg(tmoy)&group_by=code_insee_departement"
-api_req_tmin="?select=min(tmin)&group_by=code_insee_departement"
-api_req_tmax="?select=max(tmax)&group_by=code_insee_departement"
+api_req_tmoy="?select=avg(tmoy)&group_by=code_insee_departement%2C%20departement"
+api_req_tmin="?select=min(tmin)&group_by=code_insee_departement%2C%20departement"
+api_req_tmax="?select=max(tmax)&group_by=code_insee_departement%2C%20departement"
 
 # Données de consommation d'électricité par adresses et par départements
 consumption_data_url_2018="https://enedis.opendatasoft.com/api/explore/v2.1/catalog/datasets/consommation-annuelle-residentielle-par-adresse/exports/csv?lang=fr&refine=annee%3A%222018%22&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B"
