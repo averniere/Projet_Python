@@ -146,7 +146,7 @@ dep = s3.download_vectorfile_url_all(
     source="EXPRESS-COG-CARTO-TERRITOIRE",
     year=2022) # Fond de carte des départements français 
 
-var_dep=['INSEE_DEP', 'geometry'] # On ne garde que les variables codant le code du département et la variable geometry
+var_dep=['NOM','INSEE_DEP', 'geometry'] # On ne garde que les variables codant le code du département et la variable geometry
 
 def save_map(m, choropleth, year, format, replace:bool=False):
     '''Enregistre une carte dans le dossier cartes du repository.
