@@ -159,9 +159,4 @@ def save_map(m, choropleth, year, format, replace:bool=False):
         choropleth.add_to(m)
         m.save(path_to_map)
 
-def save_map2(ax, format, year, replace:bool=False):
-    path_to_map= "cartes\conso_"+f"{year}"+"."+f"{format}"
-    if not (isfile (path_to_map) and not replace):
-        fig=ax.plot()
-        fig.savefig(path_to_map)
 
