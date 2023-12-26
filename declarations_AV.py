@@ -148,7 +148,7 @@ dep = s3.download_vectorfile_url_all(
 var_dep=['NOM','INSEE_DEP', 'geometry'] # On ne garde que les variables codant le code du département et la variable geometry
 
 def save_map(m, choropleth, year, format, replace:bool=False):
-    '''Enregistre une carte dans le dossier cartes du repository.
+    '''Enregistre une carte Folium dans le dossier cartes du repository.
     Entrées:
             m (): fond de carte
             choropleth(): attributs de la carte choroplèthe à supperposer au fond de carte
@@ -158,3 +158,10 @@ def save_map(m, choropleth, year, format, replace:bool=False):
     if not (isfile (path_to_map) and not replace):
         choropleth.add_to(m)
         m.save(path_to_map)
+
+def save_map2(ax, format, year, replace:bool=False):
+    path_to_map= "cartes\conso_"+f"{year}"+"."+f"{format}"
+    if not (isfile (path_to_map) and not replace):
+        fig=ax.plot()
+        fig.savefig(path_to_map)
+
