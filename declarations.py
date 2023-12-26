@@ -7,6 +7,9 @@ import cartiflette.s3 as s3
 from urllib import request
 import geopandas as gpd
 import geoviews as gv
+import os
+from os.path import isfile
+import requests
 
 ### URL utiles ###
 # Données météo par communes et département
