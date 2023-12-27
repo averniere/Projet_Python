@@ -1,6 +1,6 @@
 # Python ENSAE 2A
 
-Ce dépôt GitHub s'inscrit dans le cadre d'un projet "Python pour la Data Science", réalisé en deuxième année à l'ENSAE  par Aurane Verrière, Hugo Capot et Killian Pliszczak.
+Ce dépôt GitHub s'inscrit dans le cadre d'un projet "Python pour la Data Science", réalisé en deuxième année à l'ENSAE par Aurane Verrière, Hugo Capot et Killian Pliszczak.
 
 ## Structure du projet
 
@@ -34,12 +34,12 @@ A cette fin, nous avons donc découpé notre travail en plusieurs étapes :
 
 Veuillez trouver ci-dessous les modules et packages nécessaires à la bonne exécution du projet. Pour plus de simplicité, vous les retrouverez aussi dans le fichier **requirement.txt**.
 
-`pip install -q lxml`
-`import bs4`
-`import lxml`
-`import pandas`
-`import urllib`
-`from tqdm.auto import tqdm`
-`from urllib import request`
-`import pandas as pd`
-`import numpy as np`
+`pip install -q lxml`\
+`import bs4`\
+`import lxml`\
+`import pandas`\
+`import urllib`\
+`from tqdm.auto import tqdm`\
+`from urllib import request`\
+`import pandas as pd`\
+`import numpy as np`\
