@@ -29,4 +29,17 @@ A cette fin, nous avons donc découpé notre travail en plusieurs étapes :
 	-
 4. Modélisation
 	-
-	
+
+## Modules et packages nécessaire à l'exécution
+
+Veuillez trouver ci-dessous les modules et packages nécessaires à la bonne exécution du projet. Pour plus de simplicité, vous les retrouverez aussi dans le fichier **requirement.txt**.
+
+`pip install -q lxml`
+`import bs4`
+`import lxml`
+`import pandas`
+`import urllib`
+`from tqdm.auto import tqdm`
+`from urllib import request`
+`import pandas as pd`
+`import numpy as np`
