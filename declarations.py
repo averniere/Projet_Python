@@ -304,7 +304,7 @@ def get_data_consumption(url, year, replace:bool = False):
     Sortie: 
         df (dataframe) 
     '''
-    path_to_data="consommations\consommation"+f"{year}"+".csv"
+    path_to_data="tables_donnees\consommation"+f"{year}"+".csv"
     if (isfile(path_to_data) and not replace):
         df=pd.read_csv(path_to_data, sep=";")
     else:
