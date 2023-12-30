@@ -4,7 +4,7 @@ Ce dépôt GitHub s'inscrit dans le cadre d'un projet "Python pour la Data Scien
 
 ## Etapes du projet
 
-La sortie des énergies fossiles, nécessaire à la transition énergétique, amène les ménages et les entreprises à consommer toujours davantage d'électricité.
+Le dérèglement climatique actuel engendrant un réchauffement global de l'atmosphère amène les gens à modifier leur consommation. Identifier les déterminant de ces  
 
 L'objectif de notre projet est de prévoir la consommation électrique d'un ménage en France en fonction de la performance énergétique de son bâtiment, de la météo et du climat de la région. Notre étude se fait à deux échelles : la prévision de la consommation électrique départementale dans un premier temps, puis la prévision de la consommation adresse par adresse.
 
@@ -15,7 +15,7 @@ A cette fin, nous avons donc découpé notre travail en plusieurs étapes :
 	- Utilisation de la bibliothèque BeautifulSoup pour extraire différentes données (Fichier *scrapping.py*) :
 		- Températures de différentes stations météorologiques grâce au site [Info Climat](https://www.infoclimat.fr/stations-meteo/analyses-mensuelles.php?mois=12&annee=2021)
 		- Données de population par départements et par années sur la période 2011-2021 grâce au site de l'[INSEE](https://www.insee.fr/fr/statistiques/3677771?sommaire=3677855)
-	- Téléchargement de données publiques (Notebook *Etude par adresse)*:
+	- Téléchargement de données publiques (Notebooks *Etude par adresse* et *Récupération_des_données*):
 		- Consommation électrique des logements par adresse depuis le site d'Enedis
 		- DPE pour les logements français depuis l'API disponible depuis data.gouv.fr
 		- Consommation annuelle d'électricité par département depuis le site de l'agence [ORE](agenceore.fr)
@@ -41,11 +41,16 @@ A cette fin, nous avons donc découpé notre travail en plusieurs étapes :
 ## Structure du répertoire 
 
 Sont présents dans ce répertoire différents fichiers ayant des objectifs complémentaires. Nous proposons ici un ordre de parcours indicatif :
-	I. declarations.py 
-	II.  XXX 
-	III. XXX 
-	IV. XXX 
-	V. XXX 
+	
+	I. 	declarations.py
+	II. Etude à l'échelle départementale :
+		- recuperation_des_donnees.ipynb
+		- scrappings.py
+		- Modelisation.ipynb
+		- Carte_ensoleillement.ipynb
+	III. Etude de la consommation par adresse :
+		- Etude_par_adresse.ipynb
+
 
 ## Modules et packages nécessaire à l'exécution
 
