@@ -1,10 +1,10 @@
 # Python ENSAE 2A
 
-Ce dépôt GitHub s'inscrit dans le cadre d'un projet "Python pour la Data Science", réalisé en deuxième année du cycle ingénieur de l'ENSAE par Aurane Vernière, Hugo Capot et Killian Pliszczak.
+Ce dépôt GitHub s'inscrit dans le cadre du projet "Python pour la Data Science", réalisé en deuxième année du cycle ingénieur de l'ENSAE par Aurane Vernière, Hugo Capot et Killian Pliszczak.
 
 ## Etapes du projet
 
-En engendrant un réchauffement global de l'atmosphère, le dérèglement climatique actuel, amène les ménages à modifier leur consommation. Identifier les déterminants de ces comportements devient donc un point crucial, tant pour les exploitants que les gouvernants.
+En engendrant un réchauffement global de l'atmosphère, le dérèglement climatique actuel amène les ménages à modifier leur consommation d'électricité. Identifier les déterminants de ces comportements devient donc un point crucial, tant pour les exploitants que les gouvernants.
 
 L'objectif de notre projet est de prévoir la consommation électrique d'un ménage en France en fonction de la performance énergétique de son bâtiment, de la météo et du climat de la région. Notre étude se fait à deux échelles : la prévision de la consommation électrique départementale dans un premier temps, puis la prévision de la consommation adresse par adresse.
 
@@ -15,17 +15,17 @@ A cette fin, nous avons donc découpé notre travail en plusieurs étapes :
 	- Utilisation de la bibliothèque BeautifulSoup pour extraire différentes données (Fichier *declarations.py* et Notebook *Scrapping_Population*) :
 		- Températures de différentes stations météorologiques grâce au site [Info Climat](https://www.infoclimat.fr/stations-meteo/analyses-mensuelles.php?mois=12&annee=2021)
 		- Données de population par départements et par années sur la période 2011-2021 grâce au site de l'[INSEE](https://www.insee.fr/fr/statistiques/3677771?sommaire=3677855)
-   - Téléchargement de données publiques (Notebooks *Etude par adresse* et *Récupération_des_données*):
+   - Téléchargement de données publiques (Notebooks *Etude_par_adresse*, *Récupération_des_données* et fichier *declarations.py*):
 		- Consommation électrique des logements par adresse depuis le site d'[Enedis](https://data.enedis.fr/pages/accueil/)
-		- DPE pour les logements français depuis l'API disponible depuis data.gouv.fr
-		- Consommation annuelle d'électricité par département depuis le site de l'agence [ORE](agenceore.fr)
+		- DPE pour les logements français depuis l'API disponible sur [data.gouv.fr](https://api.gouv.fr/documentation/api_dpe_logements)
+		- Consommations annuelles d'électricité par département depuis le site de l'agence [ORE](agenceore.fr)
 		- Températures moyennes par départements depuis le site de l'[ODRE](opendata.reseaux-energies.fr)
 	
 2. Nettoyage et traitement des données des données
 	-
-	- Restructuration des données météorologiques pour en retirer des variables utiles (Notebook *Etude par adresse*)
-	- Choix des stations météorologiques d'intérêt (Notebook *Etude par adresse*)
-	- Choix de villes d'intérêt pour notre étude (Notebook *Etude par adresse*)
+	- Restructuration des données météorologiques pour en retirer des variables utiles (Notebook *Etude_par_adresse*)
+	- Choix des stations météorologiques d'intérêt (Notebook *Etude_par_adresse*)
+	- Choix de villes d'intérêt pour notre étude (Notebook *Etude_par_adresse*)
 	- Restructuration des données de consommation à l'échelle départementale et communale (Notebooks *Modelisation* et *Etude_par_adresse*)
 3. Visualisation et analyse des données
 	-
@@ -34,7 +34,7 @@ A cette fin, nous avons donc découpé notre travail en plusieurs étapes :
 	- Etude des corrélations entre les variables (Notebook *Modelisation*)
 4. Modélisation
 	-
-	- Régressions sur différentes variables (Notebook *Modelisation*)
+	- Régressions sur différentes variables (Notebooks *Modelisation* et *Etude_par_adresse*)
 	- Conclusions
 	
 
@@ -58,15 +58,15 @@ Veuillez trouver ci-dessous les modules et packages nécessaires à la bonne ex�
 
 ```bash
 pip install -q lxml
-pip install  pandas
-pip install  geopandas
-pip install  lxml
-pip install  urllib
-pip install  matplotlib
-pip install  requests  py7zr  geopandas  openpyxl  tqdm  s3fs  PyYAML  xlrd
-pip install  git+https://github.com/inseefrlab/cartiflette@80b8a5a28371feb6df31d55bcc2617948a5f9b1a
-pip install  mapclassify
-pip install  folium
+pip install pandas
+pip install geopandas
+pip install lxml
+pip install urllib
+pip install matplotlib
+pip install requests  py7zr  geopandas  openpyxl  tqdm  s3fs  PyYAML  xlrd
+pip install git+https://github.com/inseefrlab/cartiflette@80b8a5a28371feb6df31d55bcc2617948a5f9b1a
+pip install mapclassify
+pip install folium
 pip install import-ipynb
 pip install seaborn
 pip install statsmodels
@@ -86,7 +86,6 @@ import declarations as dec
 import importlib
 import requests
 import geopandas as gpd
-import declarations_AV as dec
 import matplotlib.pyplot as plt
 import mapclassify as mc
 import folium
