@@ -23,14 +23,14 @@ A cette fin, nous avons donc découpé notre travail en plusieurs étapes :
 	
 2. Nettoyage et traitement des données des données
 	-
-	- Restructuration des données météorologiques pour en retirer des variables utiles (Fichier *scrapping.py*)
+	- Restructuration des données météorologiques pour en retirer des variables utiles (Notebook *Etude par adresse*)
 	- Choix des stations météorologiques d'intérêt (Notebook *Etude par adresse*)
 	- Choix de villes d'intérêt pour notre étude (Notebook *Etude par adresse*)
 	- Création de tableaux résumant les données utilisées (Notebook *Modelisation*)
 3. Visualisation et analyse des données
 	-
-	- Description des données de consommation par l'utilisation de cartes (Notebook	 *Carte_ensoleillement*) et de graphiques (Notebook *Recuperation_des_donnees_AV*)
-	- Description des données de températures moyennes par l'utilisation de cartes (Fichier ?) et de graphiques (Notebook *Recuperation_des_donnees_AV*)
+	- Description des données de consommation par l'utilisation de cartes et de graphiques (Notebook *Recuperation_des_donnees*)
+	- Description des données de températures moyennes par l'utilisation de cartes et de graphiques (Notebook *Recuperation_des_donnees*)
 	- Etude des corrélations entre les variables (Notebook *Modelisation*)
 4. Modélisation
 	-
@@ -45,7 +45,7 @@ Sont présents dans ce répertoire différents fichiers ayant des objectifs comp
 	I. 	declarations.py
 	II. Etude à l'échelle départementale :
 		- recuperation_des_donnees.ipynb
-		- scrappings.py
+		- Scrapping_population.ipynb
         - Carte_ensoleillement.ipynb
 		- Modelisation.ipynb
 	III. Etude de la consommation par adresse :
