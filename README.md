@@ -4,7 +4,7 @@ Ce dépôt GitHub s'inscrit dans le cadre d'un projet "Python pour la Data Scien
 
 ## Etapes du projet
 
-Le dérèglement climatique actuel engendrant un réchauffement global de l'atmosphère amène les gens à modifier leur consommation. Identifier les déterminant de ces  
+Le dérèglement climatique actuel engendrant un réchauffement global de l'atmosphère amène les gens à modifier leur consommation. Identifier les déterminant de ces comportements devient donc un point crucial, tant pour les exploitants que les gouvernants. 
 
 L'objectif de notre projet est de prévoir la consommation électrique d'un ménage en France en fonction de la performance énergétique de son bâtiment, de la météo et du climat de la région. Notre étude se fait à deux échelles : la prévision de la consommation électrique départementale dans un premier temps, puis la prévision de la consommation adresse par adresse.
 
