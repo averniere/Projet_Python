@@ -4,7 +4,7 @@
 
 import bs4
 import lxml
-import pandas
+import pandas 
 import urllib
 from tqdm.auto import tqdm
 
