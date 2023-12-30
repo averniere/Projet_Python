@@ -12,7 +12,7 @@ A cette fin, nous avons donc découpé notre travail en plusieurs étapes :
 
 1. Récupération des données
 	-
-	- Utilisation de la bibliothèque BeautifulSoup pour extraire différentes données (Fichier *scrapping.py*) :
+	- Utilisation de la bibliothèque BeautifulSoup pour extraire différentes données (Fichier *declarationq.py* et Notebook *Scrapping_Population*) :
 		- Températures de différentes stations météorologiques grâce au site [Info Climat](https://www.infoclimat.fr/stations-meteo/analyses-mensuelles.php?mois=12&annee=2021)
 		- Données de population par départements et par années sur la période 2011-2021 grâce au site de l'[INSEE](https://www.insee.fr/fr/statistiques/3677771?sommaire=3677855)
 	- Téléchargement de données publiques (Notebooks *Etude par adresse* et *Récupération_des_données*):
