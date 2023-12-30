@@ -1,6 +1,6 @@
 # Python ENSAE 2A
 
-Ce dépôt GitHub s'inscrit dans le cadre d'un projet "Python pour la Data Science", réalisé en deuxième année du cycle ingénieur de l'ENSAE par Aurane Verrière, Hugo Capot et Killian Pliszczak.
+Ce dépôt GitHub s'inscrit dans le cadre d'un projet "Python pour la Data Science", réalisé en deuxième année du cycle ingénieur de l'ENSAE par Aurane Vernière, Hugo Capot et Killian Pliszczak.
 
 ## Etapes du projet
 
