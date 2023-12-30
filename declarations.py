@@ -371,3 +371,82 @@ def save_map(m, choropleth, year, format, replace:bool=False):
     if not (isfile (path_to_map) and not replace):
         choropleth.add_to(m)
         m.save(path_to_map)
+
+
+class Temperatures_dep :
+    """
+    Class permettant de traiter les données extraites et formalisées par la class 'Meteo'. 
+    Elle permet notamment de déterminer sous forme de tableau :
+        - les températures extrêmes par département et par années
+        - les températures moyennes par département et par années
+        - les températures extrêmes moyennes par département et par années
+    """
+    
+    def __init__ (self) :
+        """
+        Initialisation de la classe contenant :
+            self.data_raw : DataFrame contenant les données brutes extraites
+            self.data_moy : DataFrame contenant les températures moyennes et extrêmes moyennes par département par années
+            self.data_max : DataFrame contenant les températures maximales par départements et par années
+            self.data_min : DataFrame contenant les températures minimales par départements et par années
+        """
+        self.data_raw = pd.read_csv('temperature-quotidienne-departementale.csv',sep=';')
+        self.data_raw['key'] = self.data_raw['departement'] + self.data_raw['date_obs'].apply(lambda x : x[:4])
+        
+        self.data_moy = self.data_raw.groupby('key').mean('tmax')
+        self.data_moy.rename({'tmin' : 'tmin_moy', 'tmax' : 'tmax_moy', 'tmoy' : 'tmoy_moy'},axis=1,inplace=True)
+        
+        self.data_max = self.data_raw.groupby('key').max('tmax')
+        self.data_max.rename({'tmin' : 'tmin_max', 'tmax' : 'tmax_max', 'tmoy' : 'tmoy_max'},axis=1,inplace=True)
+        
+        self.data_min = self.data_raw.groupby('key').min('tmax')
+        self.data_min.rename({'tmin' : 'tmin_min', 'tmax' : 'tmax_min', 'tmoy' : 'tmoy_min'},axis=1,inplace=True)
+        
+    def merge(self):
+        """
+        Fonction permettant de merge les différents dictionnaires initiaux sous la forme d'un dictionnaire complet.
+
+        Paramètres :
+        ------------
+            self.data_moy : DataFrame
+            self.data_max : DataFrame
+            self.data_min : DataFrame
+
+        Output :
+        --------
+            self.data_merged : DataFrame
+                DF contenant toutes les données des tableaux initiaux sous la forme d'un unique tableau
+        """
+        self.data_merged = self.data_min.merge(self.data_moy,how='outer',on='key')
+        self.data_merged = self.data_merged.merge(self.data_max,how='outer',on='key')
+        return self.data_merged
+
+    def export(self, table = 'merged'):
+        """
+        Fonction intégrée d'export pour permettant de faciliter les manipulations et sélectionner le tableau exporté.
+
+        Paramètres:
+            ------------
+                self.data_raw : DataFrame
+                self.data_moy : DataFrame
+                self.data_max : DataFrame
+                self.data_min : DataFrame
+                table : string
+                    paramètre permettant de choisir quelles tables exporter (par défaut seulement 'merged')
+        
+            Output:
+            ----------
+                Aucun
+        """
+        if table == 'all' :
+            self.data_raw.to_csv('data_raw.csv')
+            self.data_moy.to_csv('data_moy.csv')
+            self.data_max.to_csv('data_max.csv')
+            self.data_min.to_csv('data_min.csv')
+            self.data_merged.to_csv('data_merged.csv')
+            
+        elif table == 'raw':
+            self.data_raw.to_csv('data_raw.csv')
+
+        elif table == 'merged' :
+            self.data_merged.to_csv('data_merged.csv')
