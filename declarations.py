@@ -1,6 +1,6 @@
 # Import des librairies
 import bs4
-#import lxml
+import lxml
 import pandas as pd
 import urllib
 import cartiflette.s3 as s3
