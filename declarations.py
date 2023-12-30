@@ -221,14 +221,14 @@ class Meteo :
                 df[j][x]=moyenne
         data= pd.DataFrame(df)
         data.rename({'ville' : 'Villes', 
-            'tnn' : 'Température minimale extrême du mois',
-            'tnm' : 'Moyenne des températures minimales du mois', 
-            'tmm' : 'Température moyenne du mois', 
-            'txm' : 'Moyenne des températures maximales du mois', 
-            'txx' : 'Température maximale extrême du mois', 
-            'rr' : 'Cumul de précipitation du mois', 
-            'ens' : "Heure d'ensoleillement du mois", 
-            'rafale' : 'Rafale maximale du mois'},axis=1,inplace = True)
+            'tnn' : 'Moyenne des températures minimales extrêmes (\mois)',
+            'tnm' : 'Moyenne des moyennes des températures minimales (\mois)', 
+            'tmm' : 'Moyennes des température moyennes (\mois)', 
+            'txm' : 'Moyenne des moyennes des températures maximales (\mois)', 
+            'txx' : 'Moyenne des températures maximales extrêmes (\mois)', 
+            'rr' : 'Moyenne des cumuls de précipitation (\mois)', 
+            'ens' : "Moyenne des heures d'ensoleillement (\mois)", 
+            'rafale' : 'Moyenne des rafales maximales (\mois)'},axis=1,inplace = True)
         return(data)
         
 
