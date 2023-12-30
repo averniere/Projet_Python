@@ -1,20 +1,20 @@
 # Python ENSAE 2A
 
-Ce dépôt GitHub s'inscrit dans le cadre d'un projet "Python pour la Data Science", réalisé en deuxième année à l'ENSAE  par Aurane Verrière, Hugo Capot et Killian Pliszczak.
+Ce dépôt GitHub s'inscrit dans le cadre d'un projet "Python pour la Data Science", réalisé en deuxième année du cycle ingénieur de l'ENSAE par Aurane Verrière, Hugo Capot et Killian Pliszczak.
 
-## Structure du projet
+## Etapes du projet
 
 La sortie des énergies fossiles, nécessaire à la transition énergétique, amène les ménages et les entreprises à consommer toujours davantage d'électricité.
 
-L'objectif de notre projet est de prévoir la consommation électrique d'un ménage en France en fonction de la performance énergétique de son bâtiment, de la météo et du climat de la région, et de l'évolution du prix de l'énergie.
+L'objectif de notre projet est de prévoir la consommation électrique d'un ménage en France en fonction de la performance énergétique de son bâtiment, de la météo et du climat de la région. Notre étude se fait à deux échelles : la prévision de la consommation électrique départementale dans un premier temps, puis la prévision de la consommation adresse par adresse.
 
 A cette fin, nous avons donc découpé notre travail en plusieurs étapes :
 
 1. Récupération des données
 	-
 	- Utilisation de la bibliothèque BeautifulSoup pour extraire différentes données (Fichier *scrapping.py*) :
-		- Températures de différentes stations météorologiques grâce au site [Info Climat](infoclimat.fr)
-		- Données de population par départements et par années sur la période 2011-2021 grâce au site de l'[INSEE](insee.fr)
+		- Températures de différentes stations météorologiques grâce au site [Info Climat](https://www.infoclimat.fr/stations-meteo/analyses-mensuelles.php?mois=12&annee=2021)
+		- Données de population par départements et par années sur la période 2011-2021 grâce au site de l'[INSEE](https://www.insee.fr/fr/statistiques/3677771?sommaire=3677855)
 	- Téléchargement de données publiques (Notebook *Etude par adresse)*:
 		- Consommation électrique des logements par adresse depuis le site d'Enedis
 		- DPE pour les logements français depuis l'API disponible depuis data.gouv.fr
@@ -25,18 +25,27 @@ A cette fin, nous avons donc découpé notre travail en plusieurs étapes :
 	-
 	- Restructuration des données météorologiques pour en retirer des variables utiles (Fichier *scrapping.py*)
 	- Choix des stations météorologiques d'intérêt (Notebook *Etude par adresse*)
+	- Choix de villes d'intérêt pour notre étude (Notebook *Etude par adresse*)
 	- Création de tableaux résumant les données utilisées (Notebook *Modelisation*)
 3. Visualisation et analyse des données
 	-
-	- Description des données de consommation par l'utilisation de cartes (Fichier ?) et de graphiques (Notebook *Recuperation_des_donnees_AV*)
+	- Description des données de consommation par l'utilisation de cartes (Notebook	 *Carte_ensoleillement*) et de graphiques (Notebook *Recuperation_des_donnees_AV*)
 	- Description des données de températures moyennes par l'utilisation de cartes (Fichier ?) et de graphiques (Notebook *Recuperation_des_donnees_AV*)
 	- Etude des corrélations entre les variables (Notebook *Modelisation*)
 4. Modélisation
 	-
 	- Régressions sur différentes variables (Notebook *Modelisation*)
+	- Conclusions
 	
 
+## Structure du répertoire 
 
+Sont présents dans ce répertoire différents fichiers ayant des objectifs complémentaires. Nous proposons ici un ordre de parcours indicatif :
+	I. declarations.py 
+	II.  XXX 
+	III. XXX 
+	IV. XXX 
+	V. XXX 
 
 ## Modules et packages nécessaire à l'exécution
 
@@ -44,15 +53,15 @@ Veuillez trouver ci-dessous les modules et packages nécessaires à la bonne ex�
 
 ```bash
 pip install -q lxml
-pip  install  pandas
-pip  install  geopandas
-pip  install  lxml
-pip  install  urllib
-pip  install  matplotlib
-pip  install  requests  py7zr  geopandas  openpyxl  tqdm  s3fs  PyYAML  xlrd
-pip  install  git+https://github.com/inseefrlab/cartiflette@80b8a5a28371feb6df31d55bcc2617948a5f9b1a
-pip  install  mapclassify
-pip  install  folium
+pip install  pandas
+pip install  geopandas
+pip install  lxml
+pip install  urllib
+pip install  matplotlib
+pip install  requests  py7zr  geopandas  openpyxl  tqdm  s3fs  PyYAML  xlrd
+pip install  git+https://github.com/inseefrlab/cartiflette@80b8a5a28371feb6df31d55bcc2617948a5f9b1a
+pip install  mapclassify
+pip install  folium
 pip install import-ipynb
 pip install seaborn
 pip install statsmodels
