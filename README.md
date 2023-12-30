@@ -4,7 +4,7 @@ Ce dépôt GitHub s'inscrit dans le cadre d'un projet "Python pour la Data Scien
 
 ## Etapes du projet
 
-Le dérèglement climatique actuel engendrant un réchauffement global de l'atmosphère amène les gens à modifier leur consommation. Identifier les déterminant de ces comportements devient donc un point crucial, tant pour les exploitants que les gouvernants. 
+En engendrant un réchauffement global de l'atmosphère, le dérèglement climatique actuel, amène les ménages à modifier leur consommation. Identifier les déterminants de ces comportements devient donc un point crucial, tant pour les exploitants que les gouvernants.
 
 L'objectif de notre projet est de prévoir la consommation électrique d'un ménage en France en fonction de la performance énergétique de son bâtiment, de la météo et du climat de la région. Notre étude se fait à deux échelles : la prévision de la consommation électrique départementale dans un premier temps, puis la prévision de la consommation adresse par adresse.
 
@@ -12,11 +12,11 @@ A cette fin, nous avons donc découpé notre travail en plusieurs étapes :
 
 1. Récupération des données
 	-
-	- Utilisation de la bibliothèque BeautifulSoup pour extraire différentes données (Fichier *declarationq.py* et Notebook *Scrapping_Population*) :
+	- Utilisation de la bibliothèque BeautifulSoup pour extraire différentes données (Fichier *declarations.py* et Notebook *Scrapping_Population*) :
 		- Températures de différentes stations météorologiques grâce au site [Info Climat](https://www.infoclimat.fr/stations-meteo/analyses-mensuelles.php?mois=12&annee=2021)
 		- Données de population par départements et par années sur la période 2011-2021 grâce au site de l'[INSEE](https://www.insee.fr/fr/statistiques/3677771?sommaire=3677855)
-	- Téléchargement de données publiques (Notebooks *Etude par adresse* et *Récupération_des_données*):
-		- Consommation électrique des logements par adresse depuis le site d'Enedis
+   - Téléchargement de données publiques (Notebooks *Etude par adresse* et *Récupération_des_données*):
+		- Consommation électrique des logements par adresse depuis le site d'[Enedis](https://data.enedis.fr/pages/accueil/)
 		- DPE pour les logements français depuis l'API disponible depuis data.gouv.fr
 		- Consommation annuelle d'électricité par département depuis le site de l'agence [ORE](agenceore.fr)
 		- Températures moyennes par départements depuis le site de l'[ODRE](opendata.reseaux-energies.fr)
@@ -26,7 +26,7 @@ A cette fin, nous avons donc découpé notre travail en plusieurs étapes :
 	- Restructuration des données météorologiques pour en retirer des variables utiles (Notebook *Etude par adresse*)
 	- Choix des stations météorologiques d'intérêt (Notebook *Etude par adresse*)
 	- Choix de villes d'intérêt pour notre étude (Notebook *Etude par adresse*)
-	- Création de tableaux résumant les données utilisées (Notebook *Modelisation*)
+	- Restructuration des données de consommation à l'échelle départementale et communale (Notebooks *Modelisation* et *Etude_par_adresse*)
 3. Visualisation et analyse des données
 	-
 	- Description des données de consommation par l'utilisation de cartes et de graphiques (Notebook *Recuperation_des_donnees*)
