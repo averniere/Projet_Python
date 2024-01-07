@@ -8,9 +8,12 @@ tqdm
 s3fs 
 PyYAML 
 xlrd
-git+https://github.com/inseefrlab/cartiflette@80b8a5a28371feb6df31d55bcc2617948a5f9b1a
+#git+https://github.com/inseefrlab/cartiflette@80b8a5a28371feb6df31d55bcc2617948a5f9b1a
 geoviews
-urllib
+#urllib
 matplotlib
 mapclassify
 folium
+import-ipynb
+seaborn
+statsmodels
